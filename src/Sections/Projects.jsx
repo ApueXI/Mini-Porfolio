@@ -1,6 +1,9 @@
-import ProjectCard from "./ProjectCard";
+import { useState } from "react";
+import ProjectCard from "../Projects/ProjectCard";
+import ProjectView from "../Projects/ProjectView";
 
 export default function Projects() {
+  const [activateProject, setActivateProject] = useState(null);
   const datas = [
     {
       id: 1,
@@ -35,16 +38,30 @@ export default function Projects() {
     },
   ];
 
+  const handleOpen = (data) => setActivateProject(data);
+  const handleClose = () => setActivateProject(null);
+
   return (
-    <div className="headers">
-      <h1 className="bg-accent inline-block mb-5 px-2.5 py-1.5 font-bold rounded-xl text-[clamp(1.5rem,2vw,2rem)]">
-        Projects
-      </h1>
-      <div className="cardContainer flex flex-wrap gap-x-3 gap-y-10 justify-evenly">
+    <div className="headers relative flex flex-col items-center">
+      <div className="m-0 w-full">
+        <h1 className="bg-accent inline-block px-2.5 py-1.5 font-bold rounded-xl text-[clamp(1.5rem,2vw,2rem)]">
+          Projects
+        </h1>
+      </div>
+
+      <div className="cardContainer h-90 overflow-y-auto md:h-[inherit] py-7 flex flex-wrap gap-x-3 gap-y-10 justify-evenly">
         {datas.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            onView={() => handleOpen(project)}
+          />
         ))}
       </div>
+
+      {activateProject && (
+        <ProjectView data={{ project: activateProject }} hide={handleClose} />
+      )}
     </div>
   );
 }
