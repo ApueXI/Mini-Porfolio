@@ -10,7 +10,7 @@ export default function ProjectCard({ project, onView }) {
       <h1 className="font-light">
         Stacks used: <span className="font-black"> {project.stack}</span>
       </h1>
-      <div className="cardContainer bg-[hsl(217,33%,27%)] px-3 py-1 rounded-lg space-x-3 mx-auto font-bold">
+      <div className="cardContainer bg-[hsl(217,33%,27%)] px-3 py-1 rounded-lg text-center space-x-3 mx-auto font-bold">
         <a
           href={project.githubLink}
           className="hover:scale-110 active:scale-110 inline-block transition duration-300 ease-in-out"
