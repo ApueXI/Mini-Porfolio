@@ -4,7 +4,7 @@ export default function About() {
       <div className="bg-primary">
         <h1 className="text-[clamp(1.5rem,2vw,2.5rem)] font-bold">About Me</h1>
         <ul className="list-inside list-disc font-medium text-[clamp(1rem,1.5vw,1.5rem)]">
-          <li>Currently Learning React and Tailwing</li>
+          <li>Currently Learning React and Tailwind</li>
           <li>Interested in learning ASP.NET CORE</li>
           <li>
             I build small projects in order to famillirize myself with the
