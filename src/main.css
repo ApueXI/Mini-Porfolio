@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+}
+body::selection {
+  color: black;
+  background-color: white;
+}
+
+@theme {
+  /* Primary brand colors */
+  --color-primary: #4f46e5; /* Indigo */
+  --color-primary-light: #6366f1; /* Lighter Indigo */
+  --color-accent: #f59e0b; /* Amber for highlights */
+
+  /* Backgrounds */
+  --color-bg: #0f172a; /* Deep Navy */
+  --color-bg-secondary: #1e293b; /* Slightly lighter section background */
+
+  /* Text */
+  --color-text: #f1f5f9; /* Light text */
+  --color-text-muted: #94a3b8; /* Muted gray text */
+
+  /* Borders and subtle elements */
+  --color-border: #334155;
+
+  /* Success/Error colors (optional for portfolio badges) */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+
+  --width-inherit: inherit;
+}
+
+@layer components {
+  .headers {
+    @apply bg-bg space-y-8 p-[clamp(10px,5vw,50px)] m-7 rounded-lg text-text;
+  }
+
+  .headers div:not(.cardContainer) {
+    @apply px-6 py-4 rounded-lg;
+  }
+
+  .linkHead a {
+    @apply inline-block hover:scale-130 active:scale-130 transition duration-300 ease-in-out;
+  }
+
+  .contactLink a {
+    @apply hover:underline active:underline;
+  }
+}
