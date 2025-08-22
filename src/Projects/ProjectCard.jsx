@@ -14,6 +14,8 @@ export default function ProjectCard({ project, onView }) {
         <a
           href={project.githubLink}
           className="hover:scale-110 active:scale-110 inline-block transition duration-300 ease-in-out"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Github Repo
         </a>
